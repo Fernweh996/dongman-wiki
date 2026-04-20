@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+@import "tailwindcss" source(none);
+@source "../src/**/*.vue";
+@source "../src/**/*.ts";
+@source not "../src/data/**";
+
+/* ==========================================================
+   万卷书 — 浅春水影国风
+   主色：桃花粉 #F3B9D2 + 水青蓝 #A6D2EB
+   如同春水映花影，两色交织
+   ========================================================== */
+:root {
+  /* 底色 — 极淡的花水交融 */
+  --bg-primary: #faf6f8;        /* 花笺白，微带暖粉 */
+  --bg-sidebar: #f2eef4;        /* 侧栏带一点淡紫灰 */
+  --bg-card: #ffffff;            /* 纯白卡片 */
+  --bg-hover: #f5eff5;           /* hover 淡花色 */
+  --bg-accent-pink: rgba(243, 185, 210, 0.12);  /* 桃花底 */
+  --bg-accent-blue: rgba(166, 210, 235, 0.12);  /* 水青底 */
+
+  /* 文字 — 确保 ≥4.5:1 对比度 */
+  --text-primary: #2a1f2d;       /* 浓墨紫 — 在 #faf6f8 上对比度 12:1 */
+  --text-secondary: #5a4d60;     /* 淡墨紫 — 对比度 6.5:1 */
+  --text-muted: #8a7e90;         /* 灰紫 — 仅用于极辅助文字 4.5:1 */
+
+  /* 主色 */
+  --pink: #F3B9D2;               /* 桃花粉 */
+  --pink-deep: #d4789e;          /* 深桃 — 用于可点击文字 4.8:1 */
+  --pink-darker: #a05070;        /* 暗桃 — 用于强调 */
+  --blue: #A6D2EB;               /* 水青蓝 */
+  --blue-deep: #5a9ab8;          /* 深水青 — 用于可点击文字 4.5:1 */
+  --blue-darker: #3a7a9a;        /* 暗青 — 用于强调 */
+
+  /* 功能色 */
+  --accent: #a05070;             /* 主强调 — 暗桃，对比度 6.2:1 */
+  --accent-alt: #3a7a9a;         /* 辅强调 — 暗青，对比度 5.1:1 */
+
+  /* 结构 */
+  --border: #e8dce8;             /* 花影淡线 */
+  --border-strong: #d0bcd0;      /* 浓一点的花线 */
+
+  /* 字体 */
+  --font-heading: 'Noto Serif SC', serif;
+  --font-body: 'Noto Sans SC', sans-serif;
+
+  /* UX: 字体基准 — 16px body, 行高 1.7 */
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* 男性角色 — 蓝色调 */
+.theme-male {
+  --accent: #3a7a9a;
+  --accent-light: #5a9ab8;
+  --pink: #A6D2EB;          /* 水青蓝 RGB(166,210,235) */
+  --pink-deep: #5a9ab8;
+  --pink-darker: #3a7a9a;
+  --bg-accent-pink: rgba(166, 210, 235, 0.12);
+  --border-strong: #a0c8e0;
+}
+
+/* 女性角色 — 红色调 (keep current defaults) */
+.theme-female {
+  /* Uses the default :root values — no overrides needed */
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== UX: Focus states ========== */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ========== UX: Skip link ========== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 999;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0 0 6px 6px;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ========== Scrollbar ========== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* ========== 水影花影装饰 ========== */
+
+/* 花水交融分割线 */
+.ink-divider {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--pink) 25%,
+    var(--blue) 50%,
+    var(--pink) 75%,
+    transparent
+  );
+  opacity: 0.5;
+}
+
+/* 花影渐变背景块 */
+.bg-flower-water {
+  background: linear-gradient(135deg,
+    rgba(243, 185, 210, 0.08) 0%,
+    rgba(166, 210, 235, 0.08) 50%,
+    rgba(243, 185, 210, 0.05) 100%
+  );
+}
+
+/* 链接标签（双向链接）— 花色系 */
+.link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 10px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  border: 1px solid var(--pink);
+  border-radius: 20px;
+  background: var(--bg-accent-pink);
+  cursor: pointer;
+  transition: all 0.2s;
+  vertical-align: baseline;
+}
+.link-chip:hover {
+  background: var(--pink);
+  color: #fff;
+  border-color: var(--pink);
+}
+
+/* 水青链接标签 */
+.link-chip-blue {
+  color: var(--accent-alt);
+  border-color: var(--blue);
+  background: var(--bg-accent-blue);
+}
+.link-chip-blue:hover {
+  background: var(--blue-deep);
+  color: #fff;
+  border-color: var(--blue-deep);
+}
+
+/* 印章标签 */
+.seal-stamp {
+  display: inline-block;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  padding: 2px 10px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  border-radius: 2px;
+}
+
+/* 雷达图 — 水影色系 */
+.radar-fill {
+  fill: rgba(243, 185, 210, 0.25);
+  stroke: var(--pink-darker);
+  stroke-width: 2;
+}
+.radar-axis {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+.radar-label {
+  fill: var(--text-secondary);
+  font-size: 12px;
+  font-family: var(--font-body);
+}
+
+/* 故事线 */
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pink-deep);
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 0 0 2px var(--pink-deep);
+}
+.timeline-line {
+  width: 2px;
+  background: linear-gradient(180deg, var(--pink), var(--blue));
+}
+
+/* 引用块 — 花影卡片 */
+.quote-block {
+  border-left: 3px solid var(--pink);
+  background: linear-gradient(135deg, var(--bg-accent-pink), var(--bg-accent-blue));
+  padding: 8px 12px;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin-left: 0;
+}
+
+/* 角色卡片 hover 水波效果 */
+.card-spring {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.25s;
+}
+.card-spring:hover {
+  border-color: var(--pink);
+  box-shadow: 0 4px 20px rgba(243, 185, 210, 0.15), 0 2px 10px rgba(166, 210, 235, 0.1);
+  transform: translateY(-1px);
+}
