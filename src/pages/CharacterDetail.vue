@@ -3,6 +3,7 @@ import type { Character, Work } from '../data/works'
 import { works } from '../data/works'
 import type { PanelEntity } from '../components/RightPanel.vue'
 import LinkedText from '../components/LinkedText.vue'
+import { BASE } from '../utils/base'
 
 const props = defineProps<{
   character: Character
@@ -139,12 +140,12 @@ function getReversedStoryline(character: Character) {
             }"
           >
             <img
-              :src="`/avatars/${character.id}.jpg`"
+              :src="`${BASE}avatars/${character.id}.jpg`"
               :alt="character.name"
               class="w-full h-full object-cover"
               @error="(e: Event) => {
                 const img = e.target as HTMLImageElement
-                if (img.src.endsWith('.jpg')) { img.src = `/avatars/${character.id}.png` }
+                if (img.src.endsWith('.jpg')) { img.src = `${BASE}avatars/${character.id}.png` }
                 else {
                   img.style.display = 'none'
                   img.parentElement!.innerHTML = `<div style='width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg-accent-pink);font-family:var(--font-heading);font-size:2.5rem;color:var(--accent)'>${character.name[0]}</div>`

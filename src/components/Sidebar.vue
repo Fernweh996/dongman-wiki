@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { works } from '../data/works'
 import type { Work } from '../data/works'
+import { BASE } from '../utils/base'
 
 const props = defineProps<{
   open: boolean
@@ -185,13 +186,13 @@ function getByTier(work: Work) {
                           @click="emit('selectCharacter', id)"
                         >
                           <img
-                            :src="`/avatars/${id}.jpg`"
+                            :src="`${BASE}avatars/${id}.jpg`"
                             alt=""
                             class="w-5 h-5 rounded-full object-cover flex-shrink-0"
                             :style="{ border: '1px solid var(--border)' }"
                             @error="(e: Event) => {
                               const img = e.target as HTMLImageElement
-                              if (img.src.endsWith('.jpg')) { img.src = `/avatars/${id}.png` }
+                              if (img.src.endsWith('.jpg')) { img.src = `${BASE}avatars/${id}.png` }
                               else { img.style.display = 'none' }
                             }"
                           />
@@ -229,13 +230,13 @@ function getByTier(work: Work) {
                       @click="emit('selectCharacter', ch!.id)"
                     >
                       <img
-                        :src="`/avatars/${ch!.id}.jpg`"
+                        :src="`${BASE}avatars/${ch!.id}.jpg`"
                         alt=""
                         class="w-5 h-5 rounded-full object-cover flex-shrink-0"
                         :style="{ border: '1px solid var(--border)' }"
                         @error="(e: Event) => {
                           const img = e.target as HTMLImageElement
-                          if (img.src.endsWith('.jpg')) { img.src = `/avatars/${ch!.id}.png` }
+                          if (img.src.endsWith('.jpg')) { img.src = `${BASE}avatars/${ch!.id}.png` }
                           else { img.style.display = 'none' }
                         }"
                       />

@@ -10,6 +10,7 @@ import type { PanelEntity } from './components/RightPanel.vue'
 import AnnotationTool from './components/AnnotationTool.vue'
 import AnnotationList from './components/AnnotationList.vue'
 import { useAnnotations } from './composables/useAnnotations'
+import { BASE } from './utils/base'
 
 const sidebarOpen = ref(true)
 const selectedWorkId = ref<string | null>(works[0]?.id ?? null)
@@ -77,9 +78,9 @@ function handlePanelCharacterSelect(workId: string, characterId: string) {
 function onBgError(e: Event, characterId: string) {
   const img = e.target as HTMLImageElement
   if (img.src.endsWith(`/backgrounds/${characterId}.jpg`)) {
-    img.src = `/backgrounds/${characterId}.png`
+    img.src = `${BASE}backgrounds/${characterId}.png`
   } else if (img.src.endsWith(`/backgrounds/${characterId}.png`)) {
-    img.src = `/backgrounds/${characterId}.jpeg`
+    img.src = `${BASE}backgrounds/${characterId}.jpeg`
   } else {
     img.style.display = 'none'
   }
@@ -224,7 +225,7 @@ function onBgError(e: Event, characterId: string) {
               <div :style="{ height: '100vh', width: '100%' }">
                 <img
                   :key="selectedCharacter.id"
-                  :src="`/backgrounds/${selectedCharacter.id}.jpg`"
+                  :src="`${BASE}backgrounds/${selectedCharacter.id}.jpg`"
                   alt=""
                   :style="{
                     width: '100%',

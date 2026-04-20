@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Ability, Work } from '../data/works'
 import RadarChart from './RadarChart.vue'
+import { BASE } from '../utils/base'
 
 export interface PanelEntity {
   type: 'character' | 'faction' | 'ability' | 'event' | 'work' | 'storyline'
@@ -130,12 +131,12 @@ const tierCfg: Record<1 | 2 | 3, { label: string; color: string }> = {
                   :style="{ border: '2px solid var(--pink)', boxShadow: '0 2px 10px rgba(243,185,210,0.15)' }"
                 >
                   <img
-                    :src="`/avatars/${ch.id}.jpg`"
+                    :src="`${BASE}avatars/${ch.id}.jpg`"
                     :alt="ch.name"
                     class="w-full h-full object-cover"
                     @error="(e) => {
                       const img = (e as any).target as HTMLImageElement
-                      if (img.src.endsWith('.jpg')) { img.src = `/avatars/${ch.id}.png` }
+                      if (img.src.endsWith('.jpg')) { img.src = `${BASE}avatars/${ch.id}.png` }
                       else {
                         img.style.display = 'none'
                         img.parentElement!.innerHTML = `<div style='width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg-accent-pink);font-family:var(--font-heading);font-size:1.5rem;color:var(--accent)'>${ch.name[0]}</div>`

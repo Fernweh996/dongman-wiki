@@ -65,12 +65,17 @@
   /* Uses the default :root values — no overrides needed */
 }
 
+html {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
 body {
   margin: 0;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
