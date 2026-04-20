@@ -5,6 +5,16 @@
 @source "../src/**/*.ts";
 @source not "../src/data/**";
 
+/* 覆盖 Tailwind 默认字号 — 中文字视觉偏大，缩小一档 */
+@theme {
+  --text-xs: 0.7rem;
+  --text-sm: 0.8rem;
+  --text-base: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.1rem;
+  --text-3xl: 1.6rem;
+}
+
 /* ==========================================================
    万卷书 — 浅春水影国风
    主色：桃花粉 #F3B9D2 + 水青蓝 #A6D2EB
