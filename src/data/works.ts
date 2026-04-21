@@ -2252,31 +2252,6 @@ export const works: Work[] = [
         verified: false,
         stats: { power: 88, wisdom: 80, speed: 75, defense: 70, technique: 85, potential: 65 },
       },
-
-      // --- 纳森王 ---
-      {
-        id: 'nasen-wang',
-        name: '纳森王',
-        aliases: [],
-        tier: 3,
-        gender: 'female',
-        summary: '纳森岛之王，年轻黑发女性。身份被各方势力质疑。曾被冯宝宝打过。被要求独自去"乐园"见倒吊，在枯萎的神树前完成某种仪式。',
-        quotes: [
-          { text: '我这个"王"就是一个笑话啊。', source: '对接待规格的不满' },
-        ],
-        personality: ['年轻但承受巨大压力', '身份被质疑但坚持王的责任'],
-        abilities: [],
-        relations: [
-          { target: 'feng-baobao', type: '曾交手', description: '曾被冯宝宝打过。' },
-        ],
-        background: '纳森岛之王，统治一个不被世界承认的异人之岛。王位继承有两种方式：神树选择或弑王挑战。面临神树枯死和有势力要毁掉神树的危机。',
-        storyline: [
-          { phase: '纳森岛危机', description: '神树接近枯死，身份被质疑，被倒吊带到神树前。多国异人代表齐聚，纳森卫九人守护。', arc: '纳森岛篇' },
-        ],
-        status: '存活',
-        verified: false,
-        stats: { power: 50, wisdom: 55, speed: 45, defense: 50, technique: 40, potential: 60 },
-      },
     ],
 
     factions: [
@@ -2322,13 +2297,6 @@ export const works: Work[] = [
           '道教武当派，异人界重要正统势力之一。王也因在罗天大醮中暴露风后奇门身份后被逐出。',
         members: ['wang-ye'],
       },
-      // --- 纳森岛 ---
-      {
-        id: 'na-sen-dao',
-        name: '纳森岛',
-        description: '不被世界承认的异人之岛。在任何地图、公开资料、卫星图上都找不到。岛上有"神树"——纳森岛存在的根基，被评价为"最伟大的巫术"，但已接近枯死。入岛规则：成为岛民后注销原有世界身份。王位继承两种方式：神树选择出生在岛上的孩子，或任何人弑王挑战成功。',
-        members: ['nasen-wang'],
-      },
       // --- 三十六贼 ---
       {
         id: 'san-shi-liu-zei',
@@ -2350,7 +2318,6 @@ export const works: Work[] = [
       { id: 'luo-tian-da-jiao', name: '罗天大醮', description: '各大门派齐聚龙虎山天师府的异人比武大会。张楚岚在此夺冠但拒绝继承天师之位，王也暴露风后奇门身份，诸葛青经历人生转折。' },
       { id: 'quan-xing-gong-shan', name: '全性攻山', description: '全性大闹龙虎山事件。萧霄在此失去一只手臂，多名角色命运在此改变。' },
       { id: 'bi-you-cun', name: '碧游村事件', description: '多方势力在碧游村混战。张楚岚使用唐门暗器对抗全性。萧霄将张楚岚灵魂轰出肉身。陈朵在此牺牲。唐门与全性的秘密交易被揭露。张楚岚提出"第三条路"。' },
-      { id: 'na-sen-dao-shi-jian', name: '纳森岛事件', description: '世界观从国内扩展到全球。纳森岛神树接近枯死，有势力要毁掉神树。三十六贼成员"十七"现身展示六库仙贼。各国异人代表齐聚。哪都通派出观察团。' },
     ],
 
     factionClassification: {
@@ -2361,7 +2328,6 @@ export const works: Work[] = [
       '诸葛家': ['zhuge-qing'],
       '陆家': ['lu-linglong', 'lu-lin', 'lu-jin'],
       '三十六贼': ['wu-gensheng', 'zhang-huaiyi', 'shi-qi'],
-      '纳森岛': ['nasen-wang'],
       '曜星社': ['qu-tong'],
     },
   },
