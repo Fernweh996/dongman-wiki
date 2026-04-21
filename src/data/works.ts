@@ -2185,54 +2185,6 @@ export const works: Work[] = [
         stats: { power: 52, wisdom: 60, speed: 58, defense: 50, technique: 60, potential: 55 },
       },
 
-      // --- 红蝶 ---
-      {
-        id: 'hongdie',
-        name: '红蝶',
-        aliases: [],
-        tier: 3,
-        gender: 'female',
-        summary:
-          '[[全性]]成员。行事隐秘，擅长利用蝶形炁术进行侦查与爆破，是全性在暗线行动中不可忽视的执行者之一。',
-        quotes: [],
-        personality: ['冷静', '隐忍', '行事果断'],
-        abilities: [
-          {
-            name: '红蝶爆破',
-            description: '操控炁化红蝶进行爆破攻击，红蝶可隐匿于环境之中，在目标毫无防备时引爆，兼具隐蔽性与杀伤力。',
-          },
-          {
-            name: '白蝶侦查',
-            description: '释放炁化白蝶进行远距离侦查，可探知敌方位置与动向，为全性行动提供情报支持。',
-          },
-        ],
-        relations: [
-          {
-            target: 'wu-gensheng',
-            type: '从属',
-            description: '全性成员，奉行[[无根生]]的全性理念。',
-          },
-          {
-            target: 'xia-he',
-            type: '同门',
-            description: '同为[[全性]]成员，在全性行动中有所协作。',
-          },
-        ],
-        background:
-          '[[全性]]成员，以蝶形炁术见长。在全性的暗线布局中担任侦查与破坏任务，行踪隐秘，鲜少在正面战场露面。其过往经历与加入全性的契机尚待补充。',
-        storyline: [
-          {
-            phase: '全性暗线潜伏，执行侦查任务',
-            description:
-              '以[[全性]]成员身份参与暗线行动，利用白蝶侦查与红蝶爆破配合，为全性的扩张计划提供关键情报与战术支援。',
-            arc: '全性篇',
-          },
-        ],
-        status: '存活',
-        verified: false,
-        stats: { power: 55, wisdom: 62, speed: 65, defense: 48, technique: 68, potential: 58 },
-      },
-
       // --- 张怀义 ---
       {
         id: 'zhang-huaiyi',
@@ -2405,7 +2357,7 @@ export const works: Work[] = [
       '八奇技传人': ['zhang-chulan', 'feng-baobao', 'wang-ye', 'zhang-lingyu', 'lu-jin', 'qu-tong', 'ma-xianhong', 'ba-lun', 'lv-liang', 'wang-bing'],
       '哪都通': ['chen-duo', 'xiao-zizai', 'xu-si', 'xu-san', 'liu-yanyan'],
       '天师府': ['zhang-zhiwei', 'tian-jinzhong'],
-      '全性': ['xia-he', 'xiao-xiao', 'xia-liuqing', 'jin-feng', 'hongdie'],
+      '全性': ['xia-he', 'xiao-xiao', 'xia-liuqing', 'jin-feng'],
       '诸葛家': ['zhuge-qing'],
       '陆家': ['lu-linglong', 'lu-lin', 'lu-jin'],
       '三十六贼': ['wu-gensheng', 'zhang-huaiyi', 'shi-qi'],
