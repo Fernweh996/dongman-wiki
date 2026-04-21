@@ -271,6 +271,29 @@ function onBgError(e: Event, characterId: string) {
                 />
               </AnnotationTool>
             </template>
+            <!-- Poster placeholder for works with no character data -->
+            <div
+              v-else-if="selectedWork && selectedWork.characters.length === 0 && selectedWork.poster"
+              class="flex flex-col items-center justify-center min-h-[60vh] gap-6 py-12"
+            >
+              <img
+                :src="`${BASE}posters/${selectedWork.poster}`"
+                :alt="selectedWork.name"
+                :style="{
+                  maxWidth: '360px',
+                  width: '100%',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+                }"
+                @error="(e: Event) => { (e.target as HTMLImageElement).style.display = 'none' }"
+              />
+              <p
+                class="text-base"
+                :style="{ color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', letterSpacing: '2px' }"
+              >
+                待补充
+              </p>
+            </div>
             <div
               v-else
               class="flex items-center justify-center h-full min-h-[60vh]"

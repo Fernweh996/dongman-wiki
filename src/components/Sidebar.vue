@@ -97,7 +97,11 @@ function getByTier(work: Work) {
       <template v-if="selectedWork">
         <div class="ink-divider mx-2 mb-4" />
 
-        <div>
+        <div v-if="!selectedWork.characters.length" style="padding: 2rem 1rem; text-align: center; color: var(--text-secondary); font-size: 0.8rem;">
+          📝 角色数据待补充
+        </div>
+
+        <div v-else>
           <div class="flex items-center justify-between px-3 py-1">
             <h3
               class="text-xs font-bold"

@@ -76,6 +76,7 @@ export interface Work {
   characters: Character[];
   factions: Faction[];
   events: Event[];
+  poster?: string;
   factionClassification?: Record<string, string[]>;
   seasons?: { number: number; name: string }[];  // 季度列表，用于按季筛选关系链
 }
@@ -2340,360 +2341,41 @@ export const works: Work[] = [
     category: 'ancient',
     description:
       '若森数字出品的3D武侠动画，故事背景设定在唐末五代十国。唐朝灭亡后，秘密机构"不良人"携龙泉宝藏消失。末代太子[[李星云]]带着龙泉剑重返江湖，各方势力围绕龙泉宝藏展开明争暗斗。已播出六季。',
-    characters: [
-      // --- 李星云 ---
-      {
-        id: 'li-xingyun',
-        name: '李星云',
-        aliases: ['天暗星'],
-        tier: 1,
-        gender: 'male',
-        summary:
-          '唐昭宗之子，唐朝末代太子。自幼被师父[[阳叔子]]带上剑庐山隐居，下山后卷入龙泉宝藏之争。从不愿承认身份的少年，到被迫直面皇室血脉的使命，最终成为第二代不良帅，在暗处守护天下。',
-        quotes: [
-          { text: '我从来不想当什么太子。', source: '第一季' },
-        ],
-        personality: [
-          '初期洒脱随性，不愿背负皇室使命',
-          '重情重义，为身边人可以不顾一切',
-          '后期经历黑化与觉醒，心性大变',
-        ],
-        abilities: [
-          { name: '天罡诀', description: '继承自袁天罡之心的绝学，威力凌驾于大天位之上。' },
-          { name: '九幽玄天神功', description: '黑化后修炼的邪功，力量强大但有失控风险。' },
-        ],
-        relations: [
-          { target: 'ji-ruxue', type: '恋人', description: '一路相伴、生死不离的爱情。', seasons: [1,2,3,4,5,6] },
-          { target: 'lu-linxuan', type: '师姐弟', description: '阳叔子门下师姐，后各奔前程。', seasons: [1,2,3,4,5,6] },
-          { target: 'zhang-zifan', type: '亦敌亦友', description: '从对手到并肩作战的搭档。', seasons: [1,2,3,4,5,6] },
-          { target: 'yuan-tiangang', type: '棋子与棋手', description: '袁天罡布局数百年，李星云是他复兴大唐的关键棋子。', seasons: [1,2,3] },
-        ],
-        background:
-          '唐昭宗之子，朱温篡唐后被不良人秘密保护，由阳叔子带上剑庐山抚养。下山后获得龙泉剑，身份暴露，被各方势力追杀与拉拢。第六季被李嗣源杀死后以袁天罡之心复活，修炼九幽玄天神功后一度黑化失控。最终成为第二代不良帅，以天暗星之名在暗处守护天下。',
-        storyline: [
-          { phase: '携龙泉剑下山，身份暴露引发追杀', description: '与师姐[[陆林轩]]离开剑庐山进入江湖，获得龙泉剑后身份暴露，各方势力蜂拥而至。', arc: '第一季' },
-          { phase: '龙泉宝藏浮现，被迫面对皇室血脉', description: '龙泉宝藏的秘密逐渐揭开，李星云不得不正视自己的太子身份与复兴大唐的宿命。', arc: '第二季' },
-          { phase: '袁天罡死于己手，阴谋最终指向自身', description: '[[袁天罡]]布下的最后一盘棋以自己的死收局，李星云成为这盘棋的最终执行者。', arc: '第三季' },
-          { phase: '远赴娆疆，揭开十二峒之谜', description: '前往苗疆调查龙泉宝藏与十二峒的关联，在异域遭遇新的敌人与考验。', arc: '第四季' },
-          { phase: '被李嗣源杀死后以天罡之心复活', description: '[[李嗣源]]夺取其内力后将其杀死，尸祖将臣以袁天罡之心复活了他，力量暴增但人格剧变。', arc: '第六季' },
-          { phase: '成为第二代不良帅，在暗处守护天下', description: '历经黑化与觉醒，继承袁天罡的衣钵，以天暗星之名成为新一代不良帅，从此在暗处守护江湖。', arc: '第六季' },
-        ],
-        status: '存活（第二代不良帅）',
-        verified: false,
-        stats: { power: 95, wisdom: 65, speed: 80, defense: 85, technique: 78, potential: 100 },
-      },
-
-      // --- 姬如雪 ---
-      {
-        id: 'ji-ruxue',
-        name: '姬如雪',
-        aliases: [],
-        tier: 1,
-        gender: 'female',
-        summary:
-          '幻音坊成员，女帝养女。与[[李星云]]从对立到相爱，是贯穿全作的核心情感线。经历坠崖失踪、失忆、蛊术控制等重重磨难仍不改初心，战力从中等成长至大天位。',
-        quotes: [
-          { text: '只要你还在，我就不会停。', source: '第三季' },
-        ],
-        personality: [
-          '表面冷傲，内心坚韧',
-          '对李星云一往情深',
-          '历经磨难从未放弃',
-        ],
-        abilities: [
-          { name: '幻音诀', description: '幻音坊核心音杀之术。' },
-          { name: '素心剑', description: '随身佩剑，剑法凌厉。' },
-        ],
-        relations: [
-          { target: 'li-xingyun', type: '恋人', description: '从敌对到相爱，贯穿全作的核心情感线。', seasons: [1,2,3,4,5,6] },
-          { target: 'nv-di', type: '养母女', description: '女帝收养她并悉心培养，亦师亦母。', seasons: [1,2,3,6] },
-          { target: 'lu-linxuan', type: '至交', description: '两人关系亲密，多次并肩作战。', seasons: [1,2,3,4,5,6] },
-        ],
-        background:
-          '战争孤儿，被女帝收养后成为幻音坊精英战力。第二季坠崖失踪，第三季以失忆状态回归并被蛊术控制。此后逐步恢复记忆，修为持续成长，是李星云身边最坚定的守护者。',
-        storyline: [
-          { phase: '与李星云初遇，从对手变为同行', description: '奉女帝之命追踪龙泉剑，与[[李星云]]从敌对逐渐发展出真情。', arc: '第一季' },
-          { phase: '坠崖失踪，生死未卜', description: '在激战中坠落悬崖，下落不明。[[李星云]]四处寻找未果。', arc: '第二季' },
-          { phase: '失忆回归，被蛊术控制', description: '以失忆状态回归，被蛊术控制，直至蛊毒解除后恢复自我。', arc: '第三季' },
-          { phase: '修为突破大天位，守护李星云', description: '经历重重磨难后修为大幅精进，突破至大天位，成为李星云身边最强的守护者。', arc: '第五季' },
-        ],
-        status: '存活',
-        verified: false,
-        stats: { power: 82, wisdom: 60, speed: 78, defense: 70, technique: 75, potential: 85 },
-      },
-
-      // --- 张子凡 ---
-      {
-        id: 'zhang-zifan',
-        name: '张子凡',
-        aliases: [],
-        tier: 1,
-        gender: 'male',
-        summary:
-          '通文馆少主，真实身份为天师府张玄陵之子。双重身份贯穿其成长线，从李嗣源的养子到亲手斩杀养父，最终登基称帝，与[[陆林轩]]共治天下。',
-        quotes: [
-          { text: '我的命，不该由别人来定。', source: '第六季' },
-        ],
-        personality: [
-          '聪慧果敢，文武双全',
-          '表面温润，关键时刻杀伐果断',
-          '重情义，对陆林轩始终如一',
-        ],
-        abilities: [
-          { name: '五雷天心诀', description: '天师府正统雷法，可召雷劈敌。' },
-          { name: '至圣乾坤功', description: '通文馆核心功法。' },
-        ],
-        relations: [
-          { target: 'lu-linxuan', type: '夫妻', description: '从相识到结为夫妻，最终共同登上帝后之位。', seasons: [1,2,3,4,5,6] },
-          { target: 'li-xingyun', type: '亦敌亦友', description: '从对手到并肩作战的搭档。', seasons: [1,2,3,4,5,6] },
-          { target: 'li-siyuan', type: '养父子/仇敌', description: '被李嗣源收养，发现真相后反目，最终亲手将其斩杀。', seasons: [3,4,5,6] },
-        ],
-        background:
-          '自幼被李嗣源收为通文馆少主，后得知自己是天师府张玄陵之子。身份觉醒后与李嗣源决裂，最终在第六季亲手斩杀李嗣源，登基称帝，陆林轩为皇后。',
-        storyline: [
-          { phase: '通文馆少主登场，锋芒初显', description: '以通文馆少主身份出场，文武双全，与[[李星云]]形成对照。', arc: '第一季' },
-          { phase: '发现身世真相，与李嗣源决裂', description: '得知自己是天师府之后，与养父[[李嗣源]]决裂。', arc: '第三季' },
-          { phase: '亲手斩杀李嗣源，登基称帝', description: '第六季联合[[李星云]]击败[[李嗣源]]，亲手斩下其首级，随后登基称帝，[[陆林轩]]为后。', arc: '第六季' },
-        ],
-        status: '存活（后唐皇帝）',
-        verified: false,
-        stats: { power: 85, wisdom: 82, speed: 75, defense: 78, technique: 80, potential: 80 },
-      },
-
-      // --- 陆林轩 ---
-      {
-        id: 'lu-linxuan',
-        name: '陆林轩',
-        aliases: [],
-        tier: 1,
-        gender: 'female',
-        summary:
-          '主角团F4之一。陆佑劫之女，阳叔子门下弟子，[[李星云]]的师姐。全剧蜕变弧最完整的女性角色——从跟在师弟身后的天真少女，到被女帝洗脑沦为杀手，再到挣脱控制后杀伐果断地走上皇后之位。六季下来，变化最大的就是她。',
-        quotes: [],
-        personality: [
-          '初期天真善良',
-          '后期成长为果决有担当的女性',
-          '重情义，对张子凡始终不离不弃',
-        ],
-        abilities: [
-          { name: '青莲剑歌', description: '阳叔子传授的剑法，修为达中天位巅峰。' },
-        ],
-        relations: [
-          { target: 'li-xingyun', type: '师姐弟', description: '阳叔子门下同门，自幼一同长大。', seasons: [1,2,3,4,5,6] },
-          { target: 'zhang-zifan', type: '夫妻', description: '从相识到相爱到成为皇后。', seasons: [2,3,4,5,6] },
-          { target: 'nv-di', type: '对手', description: '曾被女帝洗脑控制，后挣脱恢复自我。', seasons: [2,3] },
-        ],
-        background:
-          '不良人成员陆佑劫之女，阳叔子在剑庐山上抚养她和李星云长大。下山后经历丧父之痛，又被女帝洗脑为杀手。恢复记忆后与张子凡结婚，第六季杀死李存礼，辅佐张子凡登基，成为后唐皇后。',
-        storyline: [
-          { phase: '与星云下山，初涉江湖', description: '与[[李星云]]一同离开剑庐山，首次踏入江湖。', arc: '第一季' },
-          { phase: '被女帝洗脑为杀手，失去自我', description: '被[[女帝]]用毒术抹去记忆，改造成幻音坊杀手。', arc: '第二季' },
-          { phase: '恢复记忆，与张子凡结为夫妻', description: '挣脱控制后恢复记忆，与[[张子凡]]结婚。', arc: '第三季' },
-          { phase: '杀李存礼，辅佐张子凡登基为后', description: '第六季亲手击杀李存礼，辅佐[[张子凡]]登基，成为后唐皇后。', arc: '第六季' },
-        ],
-        status: '存活（后唐皇后）',
-        verified: false,
-        stats: { power: 68, wisdom: 62, speed: 72, defense: 60, technique: 70, potential: 72 },
-      },
-
-      // --- 袁天罡 ---
-      {
-        id: 'yuan-tiangang',
-        name: '袁天罡',
-        aliases: ['不良帅'],
-        tier: 2,
-        gender: 'male',
-        summary:
-          '不良人最高首领"不良帅"，活了三百余年的传奇人物。全剧战力天花板，所有重大事件的幕后操盘手。一生只为复兴大唐，最终以死亡完成了他最后的布局。',
-        quotes: [
-          { text: '天道有常，不为尧存，不为桀亡。', source: '第三季' },
-        ],
-        personality: [
-          '运筹帷幄，布局跨越数百年',
-          '为复兴大唐不惜一切代价',
-          '全剧最深不可测的人物',
-        ],
-        abilities: [
-          { name: '天罡诀', description: '可隔空取人性命的绝世武学。' },
-          { name: '华阳针法', description: '救人杀人皆可的针法。' },
-          { name: '推背图推演', description: '以推背图预知天下大势。' },
-        ],
-        relations: [
-          { target: 'li-xingyun', type: '棋手与棋子', description: '三百年布局，李星云是他复兴大唐的最终棋子。', seasons: [1,2,3] },
-        ],
-        background:
-          '历史上唐朝著名术士，在剧中以不死之身活了三百余年，暗中操控各方势力以图复兴大唐。第三季末自毁心脉而死，但他的心脏后来被用于复活李星云，其布局影响延续至第六季。',
-        storyline: [
-          { phase: '以不良帅之名操控全局', description: '以三百年寿命和绝世武力为资本，暗中操控各方势力走向他设计好的棋局。', arc: '第一季' },
-          { phase: '逼星云认命，强推复唐之路', description: '步步紧逼[[李星云]]接受太子身份，以各种手段将其推上复兴大唐之路。', arc: '第二季' },
-          { phase: '自毁心脉而死，完成最后布局', description: '第三季末让[[李星云]]杀死自己，以死完成最后的布局，其心脏后来复活了李星云。', arc: '第三季' },
-        ],
-        status: '死亡（心脏融入李星云体内）',
-        verified: false,
-        stats: { power: 100, wisdom: 98, speed: 85, defense: 90, technique: 95, potential: 60 },
-      },
-
-      // --- 女帝 ---
-      {
-        id: 'nv-di',
-        name: '女帝',
-        aliases: ['李茂贞', '岐王'],
-        tier: 2,
-        gender: 'female',
-        summary:
-          '幻音坊最高统领，公开身份为岐国"岐王"（以男装示人），实为女性。麾下统率九天圣姬等精锐女性杀手组织。第六季解散幻音坊后独自离去，去向成谜。',
-        quotes: [
-          { text: '幻音坊，散了吧。', source: '第六季' },
-        ],
-        personality: [
-          '霸气果决，巾帼不让须眉',
-          '对姬如雪有真情，亦师亦母',
-          '政治手腕高超，在各势力间周旋自如',
-        ],
-        abilities: [
-          { name: '大天位修为', description: '战力达大天位，统率九天圣姬。' },
-        ],
-        relations: [
-          { target: 'ji-ruxue', type: '养母女', description: '收养姬如雪，悉心培养其武艺。', seasons: [1,2,3,6] },
-          { target: 'li-siyuan', type: '政敌', description: '幻音坊与通文馆长期对立。', seasons: [3,4,5,6] },
-        ],
-        background:
-          '以男装"岐王"身份统治岐国，暗中以"女帝"身份统领幻音坊。收养战争孤儿姬如雪。第三季被兄弟重伤，以金蚕蛊续命恢复。第六季为抵御北方入侵解散幻音坊，只身离去。',
-        storyline: [
-          { phase: '以岐王之名统御幻音坊', description: '公开身份为岐国国主"岐王"，暗中以女帝身份统领幻音坊精锐。', arc: '第一季' },
-          { phase: '被兄弟重伤，以金蚕蛊续命', description: '第三季遭亲弟暗算重伤，靠金蚕蛊续命恢复。', arc: '第三季' },
-          { phase: '解散幻音坊，只身离去', description: '第六季解散幻音坊以抵御北方威胁，身披红衣独自远行，去向不明。', arc: '第六季' },
-        ],
-        status: '存活（去向不明）',
-        verified: false,
-        stats: { power: 88, wisdom: 85, speed: 75, defense: 80, technique: 82, potential: 55 },
-      },
-
-      // --- 李嗣源 ---
-      {
-        id: 'li-siyuan',
-        name: '李嗣源',
-        aliases: ['通文馆圣主'],
-        tier: 2,
-        gender: 'male',
-        summary:
-          '通文馆圣主，全作后期主要反派。外表温文儒雅、心机深沉，以"挟天子以令诸侯"的策略攫取权力。第六季吸收李星云内力、自立为帝，最终被养子张子凡亲手斩杀。',
-        quotes: [],
-        personality: [
-          '外表儒雅，内心冷酷',
-          '权欲极强，不择手段',
-          '擅长隐忍与政治谋算',
-        ],
-        abilities: [
-          { name: '至圣乾坤功', description: '通文馆核心功法，达大天位修为。' },
-          { name: '五雷天心诀', description: '亦掌握天师府雷法。' },
-        ],
-        relations: [
-          { target: 'zhang-zifan', type: '养父子/仇敌', description: '收张子凡为养子，后被其亲手斩杀。', seasons: [3,4,5,6] },
-          { target: 'li-xingyun', type: '敌对', description: '夺取李星云内力并杀死他。', seasons: [5,6] },
-          { target: 'nv-di', type: '政敌', description: '通文馆与幻音坊长期对立。', seasons: [3,4,5,6] },
-        ],
-        background:
-          '通文馆首领，从第三季起逐步成为全剧最大反派。取代李克用成为晋王后不断扩张势力，第五季自封监国，第六季吸收李星云功力后称帝，最终被张子凡斩首。',
-        storyline: [
-          { phase: '取代李克用，执掌通文馆', description: '从通文馆内部崛起，取代李克用成为晋王，开始独揽大权。', arc: '第三季' },
-          { phase: '自封监国，大肆清洗不良人', description: '自封监国后对不良人组织发起全面清洗，逼迫李星云出山。', arc: '第五季' },
-          { phase: '杀死李星云后称帝，被张子凡斩首', description: '吸收[[李星云]]内力后称帝，最终被养子[[张子凡]]亲手斩下首级。', arc: '第六季' },
-        ],
-        status: '死亡',
-        verified: false,
-        stats: { power: 88, wisdom: 90, speed: 72, defense: 80, technique: 82, potential: 50 },
-      },
-      // --- 黑白无常 ---
-      {
-        id: 'hei-bai-wuchang',
-        name: '黑白无常',
-        aliases: ['常昊灵', '常宣灵'],
-        tier: 3,
-        gender: 'unknown',
-        summary:
-          '玄冥教双人组合，常昊灵（黑无常，男）与常宣灵（白无常，女）。养兄妹关系，擅长毒术与灵魂攻击。通过吸收五大阎君功力突破至大天位，是玄冥教中成长最快的角色。',
-        quotes: [],
-        personality: [
-          '常昊灵：冷酷寡言',
-          '常宣灵：诡异多变',
-          '二人配合默契，战斗中互补无间',
-        ],
-        abilities: [
-          { name: '千尸万毒掌', description: '以毒术为核心的掌法。' },
-          { name: '九幽玄天神功', description: '从玄冥教中盗学，可吸收他人功力。' },
-        ],
-        relations: [
-          { target: 'li-xingyun', type: '敌对', description: '玄冥教与不良人势力对立，多次与李星云等人交手。', seasons: [1,2,3] },
-        ],
-        background:
-          '被常进将军收养的孤儿兄妹。加入玄冥教后以黑白无常之名行事，通过吸收五大阎君的功力突破至大天位。第三季被派去寻找尸祖，第六季在地牢执行神秘任务。',
-        storyline: [
-          { phase: '杀陆佑劫，吸收五大阎君功力', description: '杀害[[陆林轩]]之父陆佑劫和李焕，并吸收五大阎君的功力，实力暴增。', arc: '第一季' },
-          { phase: '盗学九幽神功，突破大天位', description: '从玄冥教中盗学九幽玄天神功，突破至大天位。', arc: '第二季' },
-        ],
-        status: '存活',
-        verified: false,
-        stats: { power: 80, wisdom: 60, speed: 75, defense: 70, technique: 72, potential: 68 },
-      },
-    ],
-
-    factions: [
-      {
-        id: 'bu-liang-ren-org',
-        name: '不良人',
-        description:
-          '唐朝秘密机构，朱温篡唐后转入地下，由袁天罡（不良帅）统领。内设天罡三十六校尉等编制，拥有庞大的情报网络和武力。一切行动以复兴大唐为目标。',
-        members: ['li-xingyun', 'yuan-tiangang', 'lu-linxuan'],
-      },
-      {
-        id: 'xuan-ming-jiao',
-        name: '玄冥教',
-        description:
-          '后梁势力的黑暗组织。麾下有五大阎君、黑白无常等精锐，擅长毒术与不死军团。与不良人、幻音坊三足鼎立。',
-        members: ['hei-bai-wuchang'],
-      },
-      {
-        id: 'huan-yin-fang',
-        name: '幻音坊',
-        description:
-          '女帝统领的全女性暗杀组织，精锐为九天圣姬。对外以乐坊为掩护，实为岐国的核心武力。第六季被女帝亲手解散。',
-        members: ['nv-di', 'ji-ruxue'],
-      },
-      {
-        id: 'tong-wen-guan',
-        name: '通文馆',
-        description:
-          '李嗣源统领的政治军事组织，代表晋国势力。外表文雅，内里冷酷。张子凡最初以通文馆少主身份出场。',
-        members: ['li-siyuan', 'zhang-zifan'],
-      },
-    ],
-
-    events: [
-      { id: 'zhu-wen-cuan-tang', name: '朱温篡唐', description: '朱温灭唐建立后梁，唐朝覆灭。不良人携龙泉宝藏消失，李星云被秘密保护。一切故事的起点。' },
-      { id: 'long-quan-bao-zang', name: '龙泉宝藏之争', description: '龙泉剑所指向的唐朝隐藏宝藏，各方势力为此展开殊死争夺。' },
-      { id: 'yuan-tiangang-si', name: '袁天罡之死', description: '第三季末袁天罡自毁心脉而死，完成其复兴大唐的最终布局。其心脏后被用于复活李星云。' },
-      { id: 'li-xingyun-hehua', name: '李星云黑化', description: '第六季李星云以袁天罡之心复活后修炼九幽玄天神功，人格剧变，一度失控。' },
-      { id: 'zhang-zifan-dengji', name: '张子凡登基', description: '第六季张子凡斩杀李嗣源后登基称帝，陆林轩为后，建立后唐新政权。' },
-    ],
-
-    seasons: [
-      { number: 1, name: '第一季' },
-      { number: 2, name: '第二季' },
-      { number: 3, name: '第三季' },
-      { number: 4, name: '第四季' },
-      { number: 5, name: '第五季' },
-      { number: 6, name: '第六季' },
-    ],
-
-    factionClassification: {
-      '不良人': ['li-xingyun', 'yuan-tiangang', 'lu-linxuan'],
-      '幻音坊': ['nv-di', 'ji-ruxue'],
-      '通文馆': ['li-siyuan', 'zhang-zifan'],
-      '玄冥教': ['hei-bai-wuchang'],
-    },
+    poster: 'bu-liang-ren.jpg',
+    characters: [],
+    factions: [],
+    events: [],
+    factionClassification: {},
+  },
+  // =====================================================
+  //  那不勒斯四部曲 (Neapolitan Novels)
+  // =====================================================
+  {
+    id: 'nabuoleisi',
+    name: '那不勒斯四部曲',
+    category: 'modern',
+    description:
+      '埃莱娜·费兰特的匿名杰作。两个那不勒斯贫民区女孩——天才莉拉和"好学生"莱农——从六岁到六十多岁，半个世纪的友谊、嫉妒、背叛与成全。四部小说（《我的天才女友》《新名字的故事》《离开的，留下的》《失踪的孩子》）被誉为21世纪最伟大的文学作品之一。',
+    poster: 'nabuoleisi.jpg',
+    characters: [],
+    factions: [],
+    events: [],
+  },
+  // =====================================================
+  //  仙逆 (Xian Ni / Renegade Immortal)
+  // =====================================================
+  {
+    id: 'xian-ni',
+    name: '仙逆',
+    category: 'ancient' as const,
+    description: '耳根著作改编，讲述少年王林在修仙世界中逆天改命的故事。',
+    poster: 'xian-ni.jpg',
+    characters: [],
+    factions: [],
+    events: [],
   },
 ];
+
 
 // =====================================================
 //  暂存区 — 数据保留但不在前端展示
