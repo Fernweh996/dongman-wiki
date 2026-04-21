@@ -77,7 +77,9 @@ function handlePanelCharacterSelect(workId: string, characterId: string) {
 
 function onBgError(e: Event, characterId: string) {
   const img = e.target as HTMLImageElement
-  if (img.src.endsWith(`/backgrounds/${characterId}.jpg`)) {
+  if (img.src.endsWith(`/backgrounds/${characterId}.webp`)) {
+    img.src = `${BASE}backgrounds/${characterId}.jpg`
+  } else if (img.src.endsWith(`/backgrounds/${characterId}.jpg`)) {
     img.src = `${BASE}backgrounds/${characterId}.png`
   } else if (img.src.endsWith(`/backgrounds/${characterId}.png`)) {
     img.src = `${BASE}backgrounds/${characterId}.jpeg`
@@ -225,7 +227,7 @@ function onBgError(e: Event, characterId: string) {
               <div :style="{ height: '100vh', width: '100%' }">
                 <img
                   :key="selectedCharacter.id"
-                  :src="`${BASE}backgrounds/${selectedCharacter.id}.jpg`"
+                  :src="`${BASE}backgrounds/${selectedCharacter.id}.webp`"
                   alt=""
                   :style="{
                     width: '100%',

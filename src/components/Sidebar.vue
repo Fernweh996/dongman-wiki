@@ -186,13 +186,14 @@ function getByTier(work: Work) {
                           @click="emit('selectCharacter', id)"
                         >
                           <img
-                            :src="`${BASE}avatars/${id}.jpg`"
+                            :src="`${BASE}avatars/${id}.webp`"
                             alt=""
                             class="w-5 h-5 rounded-full object-cover flex-shrink-0"
                             :style="{ border: '1px solid var(--border)' }"
                             @error="(e: Event) => {
                               const img = e.target as HTMLImageElement
-                              if (img.src.endsWith('.jpg')) { img.src = `${BASE}avatars/${id}.png` }
+                              if (img.src.endsWith('.webp')) { img.src = `${BASE}avatars/${id}.jpg` }
+                              else if (img.src.endsWith('.jpg')) { img.src = `${BASE}avatars/${id}.png` }
                               else { img.style.display = 'none' }
                             }"
                           />
@@ -230,13 +231,14 @@ function getByTier(work: Work) {
                       @click="emit('selectCharacter', ch!.id)"
                     >
                       <img
-                        :src="`${BASE}avatars/${ch!.id}.jpg`"
+                        :src="`${BASE}avatars/${ch!.id}.webp`"
                         alt=""
                         class="w-5 h-5 rounded-full object-cover flex-shrink-0"
                         :style="{ border: '1px solid var(--border)' }"
                         @error="(e: Event) => {
                           const img = e.target as HTMLImageElement
-                          if (img.src.endsWith('.jpg')) { img.src = `${BASE}avatars/${ch!.id}.png` }
+                          if (img.src.endsWith('.webp')) { img.src = `${BASE}avatars/${ch!.id}.jpg` }
+                          else if (img.src.endsWith('.jpg')) { img.src = `${BASE}avatars/${ch!.id}.png` }
                           else { img.style.display = 'none' }
                         }"
                       />
