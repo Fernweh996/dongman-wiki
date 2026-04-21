@@ -36,7 +36,20 @@ const genderThemeClass = computed(
 function handleEsc(e: KeyboardEvent) {
   if (e.key === 'Escape') rightPanelEntity.value = null
 }
-onMounted(() => document.addEventListener('keydown', handleEsc))
+onMounted(() => {
+  document.addEventListener('keydown', handleEsc)
+  // 预加载所有角色的背景图和头像，点击时直接从浏览器缓存读取
+  requestIdleCallback(() => {
+    for (const work of works) {
+      for (const ch of work.characters) {
+        const bg = new Image()
+        bg.src = `${BASE}backgrounds/${ch.id}.webp`
+        const av = new Image()
+        av.src = `${BASE}avatars/${ch.id}.webp`
+      }
+    }
+  })
+})
 onUnmounted(() => document.removeEventListener('keydown', handleEsc))
 
 // 切换人物时重置滚动
