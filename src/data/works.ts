@@ -2225,8 +2225,8 @@ export const works: Work[] = [
       // --- 十七 ---
       {
         id: 'shi-qi',
-        name: '十七',
-        aliases: ['17', '阮丰'],
+        name: '阮丰',
+        aliases: ['十七', '17'],
         tier: 2,
         gender: 'unknown',
         summary: '三十六贼成员之一，隐居在纳森岛数十年。掌握八奇技之一"六库仙贼"。年龄、姓名、过往、能力均无法查到——"时间跨度至少有几十年了"。与端木并称三十六位中"最不爱动粗"的两位。实力极强，出手震惊旁观者。',
@@ -2321,7 +2321,7 @@ export const works: Work[] = [
     ],
 
     factionClassification: {
-      '八奇技传人': ['zhang-chulan', 'feng-baobao', 'wang-ye', 'zhang-lingyu', 'lu-jin', 'qu-tong', 'ma-xianhong', 'ba-lun', 'lv-liang', 'wang-bing'],
+      '八奇技传人': ['zhang-chulan', 'feng-baobao', 'wang-ye', 'zhang-lingyu', 'qu-tong', 'ma-xianhong', 'ba-lun', 'lv-liang', 'wang-bing'],
       '哪都通': ['chen-duo', 'xiao-zizai', 'xu-si', 'xu-san', 'liu-yanyan'],
       '天师府': ['zhang-zhiwei', 'tian-jinzhong'],
       '全性': ['xia-he', 'xiao-xiao', 'xia-liuqing', 'jin-feng'],
